@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.container{
+
+    width:900px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:50px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+}
+
+h1{
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+    letter-spacing:2px;
+
+    font-size:38px;
+
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px) scale(1.03);
+
+    background:rgba(255,255,255,.22);
+
+    box-shadow:0 0 25px rgba(0,180,255,.5);
+
+}
+
+.card i{
+
+    font-size:55px;
+
+    margin-bottom:18px;
+
+    color:#38bdf8;
+
+}
+
+.card h2{
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    color:#ddd;
+
+    font-size:15px;
+
+}
+
+footer{
+
+    position:absolute;
+
+    bottom:15px;
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+@media(max-width:800px){
+
+.container{
+
+width:90%;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+<i class="fa-solid fa-store"></i>
+Store Management System
+</h1>
+
+<div class="grid">
+
+<a href="/add-product" class="card">
+
+<i class="fa-solid fa-square-plus"></i>
+
+<h2>Add Product</h2>
+
+<p>Add new products into inventory.</p>
+
+</a>
+
+<a href="/view_product" class="card">
+
+<i class="fa-solid fa-box-open"></i>
+
+<h2>View Products</h2>
+
+<p>Manage and view all available products.</p>
+
+</a>
+
+<a href="/purchase" class="card">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<h2>Purchase</h2>
+
+<p>Create bills and complete purchases.</p>
+
+</a>
+
+<a href="/bill_history" class="card">
+
+<i class="fa-solid fa-file-invoice-dollar"></i>
+
+<h2>Bill History</h2>
+
+<p>View previous bills and transactions.</p>
+
+</a>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Store Management System | MD Farhan
+</footer>
+
+</body>
+
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+</head>
+
+<body>
+
+    <h1>Store Management System</h1>
+
+    <a href="/add-product">
+        <button>Add Product</button>
+    </a>
+
+    <a href="/products">
+        <button>View Products</button>
+    </a>
+
+    <a href="/purchase">
+        <button>Purchase</button>
+    </a>
+
+    <a href="/history">
+        <button>Bill History</button>
+    </a>
+
+</body>
+
+</html>   -->

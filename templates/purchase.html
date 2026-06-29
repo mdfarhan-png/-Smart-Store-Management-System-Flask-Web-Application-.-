@@ -1,0 +1,239 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase</title>
+
+    <style>
+        form{
+            size: 100px;
+        }
+        
+        div{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Purchase</h1>
+        <br>
+    <form method="POST">
+
+    <label for="id">Id</label>
+    <input type="text" name="id" id="id">
+
+    <br>
+
+    <label for="quantity">Quantity</label>
+    <input type="text" name="quantity" id="quantity">
+
+    <br><br>
+
+    <button type="submit" name="action" value="add_more">
+        Add More
+    </button>
+
+    <button type="submit" name="action" value="bill">
+        Bill
+    </button>
+
+</form>
+    </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase</title>
+
+    <style>
+/* ===== BACKGROUND ANIMATION ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* floating glowing particles */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 2px, transparent 2px);
+    background-size: 60px 60px;
+    animation: moveBg 20s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes moveBg {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(-200px,-200px); }
+}
+
+/* ===== CENTER LAYOUT ===== */
+div {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ===== TITLE ===== */
+h1 {
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(0,255,255,0.5);
+    animation: floatTitle 3s ease-in-out infinite;
+}
+
+@keyframes floatTitle {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ===== FORM GLASS CARD ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    padding: 30px 40px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        inset 0 0 10px rgba(255,255,255,0.1);
+
+    transform: perspective(1000px) rotateX(5deg);
+    transition: 0.5s ease;
+}
+
+form:hover {
+    transform: perspective(1000px) rotateX(0deg) scale(1.03);
+}
+
+/* ===== LABELS ===== */
+label {
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ===== INPUTS ===== */
+input {
+    padding: 12px;
+    width: 250px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+input:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0,255,255,0.5);
+}
+
+/* ===== BUTTONS ===== */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+/* Add More Button */
+button[value="add_more"] {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    box-shadow: 0 0 15px rgba(0,150,255,0.5);
+}
+
+button[value="add_more"]:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px rgba(0,150,255,0.8);
+}
+
+/* Bill Button */
+button[value="bill"] {
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    color: white;
+    box-shadow: 0 0 15px rgba(255,50,100,0.5);
+}
+
+button[value="bill"]:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px rgba(255,50,100,0.8);
+}
+</style>
+</head>
+<body>
+
+    <div>
+        <h1>Purchase</h1>
+        <br>
+    <form method="POST">
+
+    <label for="id">Id</label>
+    <input type="text" name="id" id="id">
+
+    <br>
+
+    <label for="quantity">Quantity</label>
+    <input type="text" name="quantity" id="quantity">
+
+    <br><br>
+
+    <button type="submit" name="action" value="add_more">
+        Add More
+    </button>
+
+    <button type="submit" name="action" value="bill">
+        Bill
+    </button>
+
+</form>
+    </div>
+</body>
+</html>

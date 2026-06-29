@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill Invoice</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            width: 600px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        th {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .total {
+            text-align: right;
+            margin-top: 15px;
+            font-size: 20px;
+            color: #00ffcc;
+        }
+
+        .btn {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .home {
+            background: #ff416c;
+            color: white;
+        }
+
+        .print {
+            background: #00c6ff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>🧾 BILL INVOICE</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+        </tr>
+
+        {% for item in bill_items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price * item.quantity }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="total">
+        Grand Total: ₹ {{ total }}
+    </div>
+
+    <div class="btn">
+        <button class="home" onclick="window.location.href='/purchase'">Back</button>
+        <button class="print" onclick="window.print()">Print</button>
+    </div>
+
+</div>
+
+</body>
+</html>

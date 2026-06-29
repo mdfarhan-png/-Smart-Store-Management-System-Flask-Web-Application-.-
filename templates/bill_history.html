@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill History</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 80%;
+            height: 80vh;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 20px;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            overflow-y: auto;
+            transform: perspective(1000px) rotateX(3deg);
+            transition: 0.4s;
+        }
+
+        .box:hover {
+            transform: perspective(1000px) rotateX(0deg);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px cyan;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .btn {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #ff416c;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>🧾 BILL HISTORY</h1>
+
+    <pre>
+{{ history }}
+    </pre>
+
+    <div class="btn">
+        <a href="/dashboard">
+            <button>Back to Dashboard</button>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
