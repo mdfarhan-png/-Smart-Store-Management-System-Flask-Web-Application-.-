@@ -8,73 +8,212 @@
 
     <style>
         *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        body{
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            background:linear-gradient(135deg,#74ebd5,#9face6);
-        }
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
 
-        .container{
-            width:400px;
-            background:white;
-            padding:35px;
-            border-radius:15px;
-            box-shadow:0 10px 25px rgba(0,0,0,0.2);
-        }
+    background:linear-gradient(-45deg,
+    #4facfe,
+    #00f2fe,
+    #43e97b,
+    #38f9d7);
 
-        h2{
-            text-align:center;
-            margin-bottom:25px;
-            color:#333;
-        }
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
+}
 
-        label{
-            display:block;
-            margin-bottom:8px;
-            font-weight:bold;
-            color:#444;
-        }
+/* Animated Background */
 
-        input{
-            width:100%;
-            padding:12px;
-            margin-bottom:20px;
-            border:1px solid #ccc;
-            border-radius:8px;
-            font-size:16px;
-            outline:none;
-            transition:0.3s;
-        }
+@keyframes bgAnimation{
 
-        input:focus{
-            border-color:#4CAF50;
-            box-shadow:0 0 8px rgba(76,175,80,0.3);
-        }
+    0%{
+        background-position:0% 50%;
+    }
 
-        button{
-            width:100%;
-            padding:12px;
-            border:none;
-            border-radius:8px;
-            background:#4CAF50;
-            color:white;
-            font-size:17px;
-            font-weight:bold;
-            cursor:pointer;
-            transition:0.3s;
-        }
+    50%{
+        background-position:100% 50%;
+    }
 
-        button:hover{
-            background:#388E3C;
-        }
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+.container{
+
+    width:420px;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.25);
+
+    animation:popup .8s ease;
+}
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+h2{
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-size:30px;
+
+    letter-spacing:1px;
+
+}
+
+label{
+
+    display:block;
+
+    color:white;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:13px;
+
+    margin-bottom:18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:16px;
+
+    transition:.35s;
+
+    background:rgba(255,255,255,.9);
+
+}
+
+input:focus{
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 12px rgba(255,255,255,.8);
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:10px;
+
+}
+
+button{
+
+    flex:1;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    color:rgb(100, 96, 94);
+
+}
+
+button:first-child{
+
+    background:whitesmoke;
+
+}
+
+button:last-child{
+
+    background:#a6ff00;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,.3);
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+@media(max-width:500px){
+
+    .container{
+
+        width:90%;
+
+    }
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+}
     </style>
 
 </head>
@@ -99,9 +238,17 @@
             <label>Quantity</label>
             <input type="number" name="quantity" required>
 
-            <button type="submit">Add Product</button>
+            <button type="submit">Add Product and back </button>
+
+            <button type="submit" name="action" value="more">
+        Add more
+    </button>
+
+
 
         </form>
+
+        
 
     </div>
 

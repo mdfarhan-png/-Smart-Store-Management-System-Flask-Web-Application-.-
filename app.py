@@ -36,12 +36,17 @@ def add_product():
 
     if request.method == "POST":
 
+        action = request.form.get("action")
+
         id = int(request.form["id"])
         name = request.form["name"]
         price = int(request.form["price"])
         quantity = int(request.form["quantity"])
 
         stock.add_product(id, name, price, quantity)
+
+        if action == "more":
+            return redirect(url_for("add_product"))
 
         return redirect(url_for("dashboard"))
 

@@ -40,7 +40,7 @@ class Stock:
                     product["price"]=price
                 if quantity is not None:
                     product["quantity"]=quantity
-        print("Stock updated successfully🤗🤗")
+        
                 
         
 

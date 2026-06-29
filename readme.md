@@ -167,7 +167,7 @@ python app.py
 
 ## 👨‍💻 Author
 
-**md farhan**
+**Md Farhan**
 💡 Python | Flask | AI/ML Enthusiast | Full Stack Learner
 
 ---
